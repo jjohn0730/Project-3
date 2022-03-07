@@ -1,0 +1,60 @@
+/*Johanna John
+* Mika Morgan
+* Project 3b: BMI Calculator Code
+* 03/03/2022
+* This Program is going to calculate the BMI of a Person in weather Kg or Lbs
+*          - Using if - else Statements
+*/
+
+#include<iostream>
+#include<math.h>
+#include<string.h>
+
+using namespace std;
+
+int main()
+{
+    char measurement;
+
+    cout << "What kind of measurment do you want to use to calculate your BMI? /n Please tipe -in lower case- k for kg or l for lbs! /n";
+    cin >> measurement;
+    if (measurement =='k') // for the Kilogramm calculation
+    {
+        float bmi, w, h; //w=weight , h=height
+        cout << "Please Enter your weight in kilogramm : ";
+        cin >> w;
+        cout << "Please Enter your Height in meter : ";
+        cin >> h;
+        bmi = (w) / (h*h); //Calculate in Lbs
+        cout << "Your BMI is : " << bmi << endl;
+
+        if (bmi > 29.9)
+            cout << "Obese";
+        else if (bmi >= 25 && bmi <= 29.9)
+            cout << "Overweight";
+        else if (bmi >= 18.5 && bmi <= 24.9)
+            cout << "Normal";
+        else
+            cout << "Underweight";
+    }
+    else // For the Pounds calculation
+    {
+        float bmi, w, h; //w=weight , h=height
+            cout << "Please Enter your weight in Pounds : ";
+            cin >> w;
+        cout << "Please Enter your Height in Inches : ";
+        cin >> h;
+        bmi = (w * 703) / (h * h); // Calculate in pounds
+        cout << "Your BMI is : " << bmi << endl;
+
+        if (bmi > 29.9)
+            cout << "Obese";
+        else if (bmi >= 25 && bmi <= 29.9)
+            cout << "Overweight";
+        else if (bmi >= 18.5 && bmi <= 24.9)
+            cout << "Normal";
+        else
+            cout << "Underweight";
+    }
+    return 0;
+}
